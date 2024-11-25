@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>JUSTICE - Free Lawyer Website Template</title>
+    <title>Pactum Law Firm</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -48,6 +48,7 @@
                             <small>+012 345 6789</small>
                         </div>
                     </div>
+                    <!-- Social Buttons -->
                     <div class="col-lg-5 text-right">
                         <div class="d-inline-flex align-items-center p-2">
                             <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
@@ -77,11 +78,11 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link">Practice</a>   
-                            <a href="team.html" class="nav-item nav-link">Attorneys</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                            <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                            <a href="" class="nav-item nav-link">Practice</a>   
+                            <a href="" class="nav-item nav-link">Attorneys</a>
+                            <a href="" class="nav-item nav-link">Contact</a>
                         </div>                        
                     </div>
                 </nav>
@@ -130,6 +131,7 @@
                     <h1 class="m-0 mt-n2 display-4 text-primary text-uppercase">Justice</h1>
                 </a>
                 <p>Volup amet magna clita tempor. Tempor sea eos vero ipsum. Lorem lorem sit sed elitr sed kasd et</p>
+                <!-- Social Buttons -->
                 <div class="d-flex justify-content-start mt-4">
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -140,11 +142,11 @@
             <div class="col-lg-6 col-md-6 mb-5">
                 <h4 class="font-weight-semi-bold text-primary mb-4">Popular Links</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Attorneys</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                    <a class="text-white mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white mb-2" href="{% url 'about' %}"><i class="fa fa-angle-right mr-2"></i>About</a>
+                    <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Services</a>
+                    <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Attorneys</a>
+                    <a class="text-white" href=""><i class="fa fa-angle-right mr-2"></i>Contact</a>
                 </div>
             </div>
             {% comment %}
@@ -179,7 +181,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'core/lib/easing/easing.min.js' %}"></script>
     <script src="{% static 'core/lib/waypoints/waypoints.min.js' %}"></script>
-    <script src="{% static 'core/lib/owlcarousel/owl.carousel.min.' %}"></script>
+    <script src="{% static 'core/lib/owlcarousel/owl.carousel.min.js' %}"></script>
     <script src="{% static 'core/lib/tempusdominus/js/moment.min.js' %}"></script>
     <script src="{% static 'core/lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
     <script src="{% static 'core/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>

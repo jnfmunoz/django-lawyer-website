@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from features.models import Feature
 
 def index(request, *args, **kwargs):
-    return render(request, 'index.html', context={})
+    features = Feature.objects.all()
+
+    return render(request, 'index.html', context={'features':features})

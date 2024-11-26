@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'attorneys',
     'contact',
     'core',
+    'features',
     'practice',
 ]
 

@@ -41,18 +41,22 @@
 <!-- About Start -->
 <div class="container-fluid py-5">
     <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-5">
-                <img class="img-fluid rounded" src="{% static 'core/img/about.jpg' %}" alt="">
+        {% for about in about %}            
+            <div class="row">
+                <div class="col-lg-5">                
+                    <img class="img-fluid rounded" src="{{about.image.url}}" alt="">
+                </div>
+                <div class="col-lg-7 mt-4 mt-lg-0">
+                    <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px;">
+                        {{about.highlight_text}}
+                    </h2>
+                    <h6 class="text-uppercase">{{about.subtitle}}</h6>
+                    <h1 class="mb-4">{{about.title}}</h1>
+                    <p>{{about.description}}</p>
+                    <a href="{% url 'about' %}" class="btn btn-primary mt-2">Learn More</a>
+                </div>
             </div>
-            <div class="col-lg-7 mt-4 mt-lg-0">
-                <h2 class="position-relative text-center bg-white text-primary rounded p-3 mt-4 mb-4 d-none d-lg-block" style="width: 350px; margin-left: -205px;">25 Years Experience</h2>
-                <h6 class="text-uppercase">Learn About Us</h6>
-                <h1 class="mb-4">We Provide Reliable And Effective Legal Services</h1>
-                <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
-                <a href="" class="btn btn-primary mt-2">Learn More</a>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 <!-- About End -->
@@ -117,10 +121,10 @@
                 <div class="feature-text bg-white rounded p-lg-5">
                     <h6 class="text-uppercase">Our Features</h6>
                     <h1 class="mb-4">Why Choose Us</h1>
-                    {% for feature in features %}
+                    {% for counter, feature in features_with_counter %}
                         <div class="d-flex mb-4">
                             <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
-                                <h5 class="text-secondary m-0">0{{feature.id}}</h5>
+                                <h5 class="text-secondary m-0">{{counter}}</h5>
                             </div>
                             <div class="ml-4">
                                 <h5>{{feature.title}}</h5>

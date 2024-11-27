@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% for practice in practice_areas%}
+    {% comment %} {{practice.title}} {% endcomment %}
+    
+    {% comment %} <i class="fa fa-2x {{ practice.icon }}">(icon)/</i> {% endcomment %}
+    {% comment %} <i class="fa fa-2x fa-landmark"> -> landmark</i> {% endcomment %}
+    <i class="fa fa-2x fa-align-justify"></i>
+    <i class="fab fa-acquisitions-incorporated"></i>
+    {% comment %} {{practice.icon}} {% endcomment %}
+{% endfor %}
 <!-- Page Header Start -->
 <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
     <div class="container">

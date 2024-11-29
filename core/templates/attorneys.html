@@ -26,66 +26,26 @@
             <div class="col-12">
                 <div class="bg-primary rounded" style="height: 200px;"></div>
                 <div class="owl-carousel team-carousel position-relative" style="margin-top: -97px; padding: 0 30px;">
-                    <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                        <h5 class="mb-2 px-4">Attorney Name</h5>
-                        <p class="mb-3 px-4">Practice Area</p>
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    {% for attorney in attorneys %}
+                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
+                            <h5 class="mb-2 px-4">{{attorney.first_name}} {{attorney.last_name}}</h5>
+                            <p class="mb-3 px-4">{{attorney.practice_area}}</p>
+                            <div class="team-img position-relative">
+                                <img class="img-fluid" src="{{attorney.profile_photo.url}}" alt="">
+                                <div class="team-social">
+                                    {% if attorney.twitter %}
+                                        <a class="btn btn-outline-light btn-square mx-1" href="{{attorney.twitter}}"><i class="fab fa-twitter"></i></a>
+                                    {% endif %}
+                                    {% if attorney.facebook %}
+                                        <a class="btn btn-outline-light btn-square mx-1" href="{{attorney.facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                    {% endif %}                                    
+                                    {% if attorney.linkedin %}
+                                        <a class="btn btn-outline-light btn-square mx-1" href="{{attorney.linkedin}}"><i class="fab fa-linkedin-in"></i></a>
+                                    {% endif %}                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                        <h5 class="mb-2 px-4">Attorney Name</h5>
-                        <p class="mb-3 px-4">Practice Area</p>
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                        <h5 class="mb-2 px-4">Attorney Name</h5>
-                        <p class="mb-3 px-4">Practice Area</p>
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                        <h5 class="mb-2 px-4">Attorney Name</h5>
-                        <p class="mb-3 px-4">Practice Area</p>
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                        <h5 class="mb-2 px-4">Attorney Name</h5>
-                        <p class="mb-3 px-4">Practice Area</p>
-                        <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-5.jpg" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -105,33 +65,17 @@
                 <div class="feature-text bg-white rounded p-lg-5">
                     <h6 class="text-uppercase">Our Features</h6>
                     <h1 class="mb-4">Why Choose Us</h1>
-                    <div class="d-flex mb-4">
-                        <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
-                            <h5 class="text-secondary m-0">01</h5>
+                    {% for counter, feature in features_with_counter %}
+                        <div class="d-flex mb-4">
+                            <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
+                                <h5 class="text-secondary m-0">{{counter}}</h5>
+                            </div>
+                            <div class="ml-4">
+                                <h5>{{feature.title}}</h5>
+                                <p class="m-0">{{feature.description}}</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h5>Best Law Practices</h5>
-                            <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
-                            <h5 class="text-secondary m-0">02</h5>
-                        </div>
-                        <div class="ml-4">
-                            <h5>Efficiency & Trust</h5>
-                            <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
-                            <h5 class="text-secondary m-0">03</h5>
-                        </div>
-                        <div class="ml-4">
-                            <h5>Results You Deserve</h5>
-                            <p class="m-0">Ipsum duo tempor elitr rebum stet magna amet kasd. Ipsum magna ipsum ipsum stet ipsum</p>
-                        </div>
-                    </div>
+                    {% endfor %}                    
                 </div>
             </div>
         </div>

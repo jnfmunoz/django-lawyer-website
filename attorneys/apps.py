@@ -4,3 +4,4 @@ from django.apps import AppConfig
 class AttorneysConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'attorneys'
+    verbose_name = 'Abogados'

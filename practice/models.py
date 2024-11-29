@@ -33,25 +33,27 @@ from fontawesome_5.fields import IconField
 class PracticeArea(models.Model):
     title = models.CharField(max_length=100, verbose_name="Título")
     description = models.CharField(max_length=200, verbose_name="Descripción")
-    icon = IconField(max_length=255, verbose_name="Icono", help_text="Clase de Font Awesome")
+    icon = IconField(max_length=255, verbose_name="icono", help_text="Clase de Font Awesome")
 
     def clean(self):
-        # Obtener el valor del icono como una cadena
-        icon_value = str(self.icon)
-        
-        # Comprobar si el valor tiene el prefijo incorrecto 'fas' y corregirlo
-        if icon_value.startswith("fas "):
-            icon_value = icon_value.replace("fas ", "fa-", 1)  # Reemplaza 'fas' por 'fa-'
+        # Convertir el icono en una cadena y manejar espacios o comas
+        icon_value = str(self.icon).strip()  # Eliminar espacios extras
+        if ' ' in icon_value:
+            icon_value = icon_value.replace(' ', '-')  # Reemplazar espacios con guiones
 
-        # Eliminar comas si están presentes y convertir a formato adecuado
-        icon_value = ' '.join(icon_value.split(','))
-
-        # Verificar si el icono sigue teniendo comas y lanzar un error si es así
         if ',' in icon_value:
-            raise ValidationError("El icono debe estar separado por espacios, no por comas.")
+            icon_value = icon_value.replace(',', ' ')  # Reemplazar comas con espacios
 
-        # Asignar el valor corregido al campo icono
-        self.icon = icon_value
+        # Asegurar que el icono empiece con 'fa-' si no lo tiene
+        if not icon_value.startswith('fa-'):
+            icon_value = 'fa-' + icon_value  # Asegurar el prefijo correcto
+        if icon_value.startswith('fas'):
+            icon_value = 'fa-' + icon_value[4:]  # Reemplaza 'fas' por 'fa-'
+
+        self.icon = icon_value  # Asignar el icono limpio
+
+        if ',' in self.icon:
+            raise ValidationError("El icono debe estar separado por espacios, no por comas.")
 
     class Meta:
         verbose_name = "Área de Práctica"

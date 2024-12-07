@@ -1,16 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% comment %} {% for practice in practice_areas%} {% endcomment %}
-    {% comment %} {{practice.title}} {% endcomment %}
-    
-    {% comment %} <i class="fa fa-2x {{ practice.icon }}">/</i> {% endcomment %}
-    {% comment %} <i class="fa fa-2x fa-landmark"> -> landmark</i> {% endcomment %}
-    {% comment %} <i class="fa fa-2x fa-align-justify"></i> {% endcomment %}
-    {% comment %} <i class="fab fa-acquisitions-incorporated"></i> {% endcomment %}
-    {% comment %} fa-fab acquisitions-incorporated {% endcomment %}
-    {% comment %} {{practice.icon}} {% endcomment %}
-{% comment %} {% endfor %} {% endcomment %}
 <!-- Page Header Start -->
 <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
     <div class="container">
@@ -33,39 +23,20 @@
                 <h6 class="text-uppercase">Our Practice</h6>
                 <h1 class="mb-4">Our Practice Areas</h1>
                 <p>Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum</p>
-                <a href="" class="btn btn-primary mt-2">More Services</a>
+                <a href="{% url 'practice' %}" class="btn btn-primary mt-2">More Services</a>
             </div>
             <div class="col-lg-9 pt-5 pt-lg-0">
                 <div class="bg-primary rounded" style="height: 200px;"></div>
-                <div class="owl-carousel service-carousel position-relative" style="margin-top: -100px; padding: 0 30px;">
-                    <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                        <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                            <i class="fa fa-2x fa-landmark"></i>
+                <div class="owl-carousel service-carousel position-relative" style="margin-top: -100px; padding: 0 30px;">                    
+                    {% for practice in practice_areas %}
+                        <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
+                            <div class="icon-box bg-secondary text-primary mt-2 mb-4">                                
+                                <i class="{{ practice.formatted_icon }}"></i>
+                            </div>
+                            <h5 class="mb-4 px-4">{{practice.title}}</h5>
+                            <p class="m-0">{{practice.description}}</p>
                         </div>
-                        <h5 class="mb-4 px-4">Civil Law</h5>
-                        <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                    </div>
-                    <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                        <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                            <i class="fa fa-2x fa-users"></i>
-                        </div>
-                        <h5 class="mb-4 px-4">Family Law</h5>
-                        <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                    </div>
-                    <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                        <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                            <i class="fa fa-2x fa-hand-holding-usd"></i>
-                        </div>
-                        <h5 class="mb-4 px-4">Business Law</h5>
-                        <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                    </div>
-                    <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
-                        <div class="icon-box bg-secondary text-primary mt-2 mb-4">
-                            <i class="fa fa-2x fa-gavel"></i>
-                        </div>
-                        <h5 class="mb-4 px-4">Criminal Law</h5>
-                        <p class="m-0">Takim stet justo elitr sea eirmod vero ipsum. Sed Stet clita sit duo dolor stet at at. Tempor dolor sit ipsum</p>
-                    </div>
+                    {% endfor %}            
                 </div>
             </div>
         </div>

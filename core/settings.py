@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'contact',
     'core',
     'features',
-    'practice',
     'fontawesome_5',
+    'practice',
+    'social',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+import django.utils.translation
+django.utils.translation.ugettext = django.utils.translation.gettext

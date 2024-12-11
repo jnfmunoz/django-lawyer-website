@@ -6,13 +6,6 @@ class PracticeArea(models.Model):
     description = models.CharField(max_length=200, verbose_name="Descripción")
     icon = IconField(max_length=255, verbose_name="Icono", help_text="Clase de Font Awesome")
 
-    class Meta:
-        verbose_name = "Área de Práctica"
-        verbose_name_plural = "Áreas de Práctica"
-        ordering = ["id"]
-
-    def __str__(self):
-        return f"Título: {self.title or ''} | Descripción: {self.description or ''} | Ícono: {self.icon or ''}"
 
     def formated_icon(self):
         """
@@ -41,4 +34,10 @@ class PracticeArea(models.Model):
 
         return ' '.join(formatted_icon)  # Unimos las partes formateadas para el icono
 
+    class Meta:
+        verbose_name = "Área de Práctica"
+        verbose_name_plural = "Áreas de Práctica"
+        ordering = ["id"]
 
+    def __str__(self):
+        return f"Título: {self.title or ''} | Descripción: {self.description or ''} | Ícono: {self.icon or ''}"

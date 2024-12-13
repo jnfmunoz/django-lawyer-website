@@ -49,9 +49,21 @@ class SocialNetwork(models.Model):
             # Actualiza el atributo
             self.social_value = value
         
-        # elif self.social_type == "phone":
-        #     # Validar si es un número de teléfono
-        #     if not re.match
+        elif self.social_type == "phone":
+            # Validar si es un número de teléfono
+            if not re.match(r'^\+?1?\d{9,15}$', self.social_value):
+                raise ValidationError({
+                    'social_value': "Debe ser un número de teléfono válido (formato internacional con hasta 15 dígitos)."
+                })
+        elif self.social_type == "email":
+            # Validar si es un correo electrónico
+            email_validator = EmailValidator()
+            try:
+                email_validator(self.social_value)
+            except ValidationError:
+                raise ValidationError({
+                    'social_value': "Debe ser un correo electrónico válido."
+                })
 
     def formated_icon(self):
         return get_formatted_icon(self.icon)

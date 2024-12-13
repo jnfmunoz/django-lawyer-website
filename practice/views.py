@@ -8,7 +8,8 @@ def practice_view(request, *args, **kwargs):
     # Crear una lista de diccionarios con los valores originales y el calculado
     practice_areas_with_icons = []
     for area in practice_areas:
-        formatted_icon_value = area.formated_icon()
+        formatted_icon_value = area.get_formatted_icon()
+        # print(formatted_icon_value)
         practice_areas_with_icons.append({
             'title': area.title,
             'description': area.description,

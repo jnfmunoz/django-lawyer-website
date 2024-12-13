@@ -1,5 +1,6 @@
 from django.db import models
 from fontawesome_5.fields import IconField
+from core.utils.icon_formatter import get_formatted_icon
 
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator, EmailValidator
@@ -37,8 +38,8 @@ class SocialNetwork(models.Model):
             # Asegurar que tenga esquema (http o https)
             if not value.startswith(("http://", "https://")): # Usa una tupla
                 value = f'https://{value}'
-            try:
-                # url_validator(self.social_value)
+
+            try:                
                 url_validator(value)
             except ValidationError:
                 raise ValidationError({
@@ -47,21 +48,14 @@ class SocialNetwork(models.Model):
             
             # Actualiza el atributo
             self.social_value = value
+        
+        # elif self.social_type == "phone":
+        #     # Validar si es un número de teléfono
+        #     if not re.match
 
     def formated_icon(self):
-        """
-        Retorna el campo `icon` formateado correctamente para usar en el template.
-        """
-        icon_value = str(self.icon) # Convertir a cadena
-        parts = [part.strip() for part in icon_value.split(',')] # Separar y limpiar las partes
-        
-        # Crear lista de clases para asignar el tamaño fa-2x
-        formatted_icon = []
-
-        # Recorrer las partes y verificar si hay un prefijo de tipo de icono (fab, fas, etc.)
-        # for part in parts:
+        return get_formatted_icon(self.icon)
             
-
     class Meta:
         verbose_name = "Red Social"
         verbose_name_plural = "Redes Sociales"

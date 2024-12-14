@@ -38,19 +38,27 @@
                 </a>
             </div>
             <div class="col-lg-9">
+                <!-- Social Buttons Start-->
                 <div class="row bg-white border-bottom d-none d-lg-flex">
                     <div class="col-lg-7 text-left">
-                        <div class="h-100 d-inline-flex align-items-center py-2 px-3">
-                            <i class="fa fa-envelope text-primary mr-2"></i>
-                            <small>info@example.com</small>
-                        </div>
-                        <div class="h-100 d-inline-flex align-items-center py-2 px-2">
-                            <i class="fa fa-phone-alt text-primary mr-2"></i>
-                            <small>+012 345 6789</small>
-                        </div>
-                    </div>
-                    <!-- Social Buttons -->
+                        <!-- Correos y teléfonos -->
+                        {% for network in social_network %}
+                            {% if network.social_type == 'email' %}
+                                <div class="h-100 d-inline-flex align-items-center py-2 px-3">
+                                    <i class="fa fa-envelope text-primary mr-2"></i>
+                                    <i class="{{ network.formatted_icon }} text-primary mr-2"></i>
+                                    <small>{{ network.social_value }}</small>
+                                </div>
+                            {% elif network.social_type == 'phone' %}
+                                <div class="h-100 d-inline-flex align-items-center py-2 px-2">
+                                    <i class="fa fa-phone-alt text-primary mr-2"></i>
+                                    <small>{{ network.social_value }}</small>
+                                </div>
+                            {% endif  %}
+                        {% endfor %}
+                    </div>                    
                     <div class="col-lg-5 text-right">
+                        <!-- Redes Sociales -->
                         <div class="d-inline-flex align-items-center p-2">
                             <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
                                 <i class="fab fa-facebook-f"></i>
@@ -70,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Social Buttons End -->
                 <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
                     <a href="index.html" class="navbar-brand d-block d-lg-none">
                         <h1 class="m-0 display-4 text-primary text-uppercase">Justice</h1>

@@ -1,6 +1,6 @@
-def get_formatted_icon(icon_value):
+def get_practice_formatted_icon(icon_value):
         """
-        Retorna el campo `icon` formateado correctamente para usar en el template.
+        Retorna el campo `icon` formateado correctamente para la clase Practice.
         """
         icon_value = str(icon_value)  # Convertir a cadena para procesarlo
         parts = [part.strip() for part in icon_value.split(',')]  # Separar y limpiar las partes
@@ -24,3 +24,12 @@ def get_formatted_icon(icon_value):
             formatted_icon.insert(1, 'fa-2x')  # Insertamos "fa-2x" después del tipo (fab, fas, etc.)
 
         return ' '.join(formatted_icon)  # Unimos las partes formateadas para el icono
+
+def get_social_network_formatted_icon(icon_value):
+        """
+        Retorna el campo `icon` formateado correctamente para la clase SocialNetwork.
+        Entrada -> fas, envelope
+        Salida -> fas fa-envelope
+        """
+        icon_value = str(icon_value)
+

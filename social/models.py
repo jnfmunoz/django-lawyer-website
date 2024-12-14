@@ -1,6 +1,6 @@
 from django.db import models
 from fontawesome_5.fields import IconField
-from core.utils.icon_formatter import get_formatted_icon
+from core.utils.icon_formatter import get_practice_formatted_icon
 
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator, EmailValidator
@@ -65,8 +65,8 @@ class SocialNetwork(models.Model):
                     'social_value': "Debe ser un correo electrónico válido."
                 })
 
-    def formated_icon(self):
-        return get_formatted_icon(self.icon)
+    def get_practice_formatted_icon(self):
+        return get_practice_formatted_icon(self.icon)
             
     class Meta:
         verbose_name = "Red Social"

@@ -1,14 +1,14 @@
 from django.db import models
 from fontawesome_5.fields import IconField
-from core.utils.icon_formatter import get_formatted_icon
+from core.utils.icon_formatter import get_practice_formatted_icon
 
 class PracticeArea(models.Model):
     title = models.CharField(max_length=100, verbose_name="Título")
     description = models.CharField(max_length=200, verbose_name="Descripción")
     icon = IconField(max_length=255, verbose_name="Icono", help_text="Clase de Font Awesome")
 
-    def get_formatted_icon(self):
-        return get_formatted_icon(self.icon)
+    def get_practice_formatted_icon(self):
+        return get_practice_formatted_icon(self.icon)
 
     class Meta:
         verbose_name = "Área de Práctica"

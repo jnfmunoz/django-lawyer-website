@@ -71,6 +71,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Custom context processors
+                'attorneys.context_processors.attorney',
+                'about.context_processors.about',
+                'features.context_processors.feature',
+                'practice.context_processors.practice_area',
+                'social.context_processors.social_network',                
             ],
         },
     },

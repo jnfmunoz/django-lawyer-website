@@ -6,11 +6,12 @@ def social_network(request, *args, **kwargs):
     # Crear una lista con los valores formatedos
     formatted_social_networks = []
     for network in social_networks:
-        formatted_icon_value = network.get_practice_formatted_icon()
+        formatted_icon_value = network.get_social_network_formatted_icon()
         formatted_social_networks.append({
-            'social_value': network.social_value,
             'formatted_icon': formatted_icon_value,
+            'description': network.description,
             'social_type': network.social_type,
+            'social_value': network.social_value,
         })
 
     # Separar por tipo

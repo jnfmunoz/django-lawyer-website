@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'about',
     'attorneys',
+    'communications',
     'contact',
     'core',
     'features',

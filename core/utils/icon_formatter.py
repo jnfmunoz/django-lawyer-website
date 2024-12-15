@@ -29,7 +29,22 @@ def get_social_network_formatted_icon(icon_value):
         """
         Retorna el campo `icon` formateado correctamente para la clase SocialNetwork.
         Entrada -> fas, envelope
-        Salida -> fas fa-envelope
+        Salida -> fas fa-envelope text-primary mr-2
         """
-        icon_value = str(icon_value)
+        icon_value = str(icon_value) # fab, facebook
+        parts = [part.strip() for part in icon_value.split(',')] # [fab, facebook]
 
+        formatted_icon = []
+
+        for part in parts:
+            if not part.startswith('fa-'): # evalua el segundo elemento de la lista
+                if part.startswith('fab') or part.startswith('fas') or part.startswith('far'): # fab, evalua el primer elemento de la lista
+                    formatted_icon.append(part)
+                else:
+                    formatted_icon.append(f"fa-{part}")
+            else:
+                formatted_icon.append(part)
+
+        formatted_icon.append('text-primary mr-2')
+
+        return ' '.join(formatted_icon)

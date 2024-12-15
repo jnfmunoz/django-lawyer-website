@@ -44,14 +44,13 @@
                         <!-- Correos y teléfonos -->
                         {% for network in social_network %}
                             {% if network.social_type == 'email' %}
-                                <div class="h-100 d-inline-flex align-items-center py-2 px-3">
-                                    <i class="fa fa-envelope text-primary mr-2"></i>
-                                    <i class="{{ network.formatted_icon }} text-primary mr-2"></i>
+                                <div class="h-100 d-inline-flex align-items-center py-2 px-3">                                    
+                                    <i class="{{ network.formatted_icon }}"></i>
                                     <small>{{ network.social_value }}</small>
                                 </div>
                             {% elif network.social_type == 'phone' %}
-                                <div class="h-100 d-inline-flex align-items-center py-2 px-2">
-                                    <i class="fa fa-phone-alt text-primary mr-2"></i>
+                                <div class="h-100 d-inline-flex align-items-center py-2 px-2">                                    
+                                    <i class="{{ network.formatted_icon }}"></i>
                                     <small>{{ network.social_value }}</small>
                                 </div>
                             {% endif  %}
@@ -60,21 +59,26 @@
                     <div class="col-lg-5 text-right">
                         <!-- Redes Sociales -->
                         <div class="d-inline-flex align-items-center p-2">
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                <i class="fab fa-youtube"></i>
-                            </a>
+                            {% for network in social_network %}
+                                {% if network.description|lower == 'facebook' %}
+                                    <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
+                                    {% comment %} <i class="fab fa-facebook-f"></i> {% endcomment %}
+                                    <i class="{{ network.formatted_icon }}"></i>
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                                {% comment %} <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
+                                    <i class="fab fa-youtube"></i>
+                                </a> {% endcomment %}
                         </div>
                     </div>
                 </div>

@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'features',
     'fontawesome_5',
     'practice',
-    'social',
+    # 'social',
 ]
 
 MIDDLEWARE = [
@@ -75,9 +75,12 @@ TEMPLATES = [
                 # Custom context processors
                 'attorneys.context_processors.attorney',
                 'about.context_processors.about',
+                'communications.context_processors.address',
+                'communications.context_processors.contact_info',
+                'communications.context_processors.social_network',
                 'features.context_processors.feature',
                 'practice.context_processors.practice_area',
-                'social.context_processors.social_network',                
+                # 'social.context_processors.social_network',                
             ],
         },
     },

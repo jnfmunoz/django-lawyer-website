@@ -45,6 +45,5 @@ def get_social_network_formatted_icon(icon_value):
             else:
                 formatted_icon.append(part)
 
-        formatted_icon.append('text-primary mr-2')
-
+        # formatted_icon.append('text-primary mr-2')
         return ' '.join(formatted_icon)

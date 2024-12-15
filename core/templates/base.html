@@ -42,18 +42,15 @@
                 <div class="row bg-white border-bottom d-none d-lg-flex">
                     <div class="col-lg-7 text-left">
                         <!-- Correos y teléfonos -->
-                        {% for network in social_network %}
-                            {% if network.social_type == 'email' %}
-                                <div class="h-100 d-inline-flex align-items-center py-2 px-3">                                    
-                                    <i class="{{ network.formatted_icon }}"></i>
-                                    <small>{{ network.social_value }}</small>
-                                </div>
-                            {% elif network.social_type == 'phone' %}
-                                <div class="h-100 d-inline-flex align-items-center py-2 px-2">                                    
-                                    <i class="{{ network.formatted_icon }}"></i>
-                                    <small>{{ network.social_value }}</small>
-                                </div>
-                            {% endif  %}
+                        {% for contact_info in contact_info %}                                
+                            <div class="h-100 d-inline-flex align-items-center py-2 px-3">
+                                <i class="fa fa-envelope text-primary mr-2"></i>
+                                <small>{{contact_info.email}}</small>
+                            </div>
+                            <div class="h-100 d-inline-flex align-items-center py-2 px-2">
+                                <i class="fa fa-phone-alt text-primary mr-2"></i>
+                                <small>{{contact_info.phone_number}}</small>
+                            </div>
                         {% endfor %}
                     </div>                    
                     <div class="col-lg-5 text-right">
@@ -61,24 +58,27 @@
                         <div class="d-inline-flex align-items-center p-2">
                             {% for network in social_network %}
                                 {% if network.description|lower == 'facebook' %}
-                                    <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                    {% comment %} <i class="fab fa-facebook-f"></i> {% endcomment %}
-                                    <i class="{{ network.formatted_icon }}"></i>
+                                    <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="{{ network.link }}">
+                                        <i class="{{ network.icon }}"></i>
+                                    </a>
+                                {% elif network.description|lower == 'twitter' %}
+                                    <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="{{ network.link }}">
+                                        <i class="{{ network.icon }}"></i>
+                                    </a>
+                                {% elif network.description|lower == 'linkedin' %}
+                                    <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="{{ network.link }}">
+                                        <i class="{{ network.icon }}"></i>
+                                    </a>
+                                {% elif network.description|lower == 'instagram' %}
+                                    <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="{{ network.link }}">
+                                        <i class="{{ network.icon }}"></i>
+                                    </a>
+                                {% elif network.description|lower == 'youtube' %}
+                                    <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="{{ network.link }}">
+                                        <i class="{{ network.icon }}"></i>
                                     </a>
                                 {% endif %}
                             {% endfor %}
-                                {% comment %} <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a class="btn btn-sm btn-outline-primary btn-sm-square mr-2" href="">
-                                    <i class="fab fa-youtube"></i>
-                                </a> {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,9 @@
                     <i class="fa fa-2x fa-map-marker-alt text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Our Office</h5>
-                        <p class="m-0">123 Street, New York, USA</p>
+                        {% for address in address %}
+                            <p class="m-0">{{address.street}} {{address.number}}, {{address.country}}</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -125,7 +127,9 @@
                     <i class="fa fa-2x fa-envelope-open text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Email Us</h5>
-                        <p class="m-0">info@example.com</p>
+                            {% for contact_info in contact_info %}
+                                <p class="m-0">{{contact_info.email}}</p>
+                            {% endfor %}
                     </div>
                 </div>
             </div>
@@ -134,7 +138,9 @@
                     <i class="fa fa-2x fa-phone-alt text-primary"></i>
                     <div class="ml-3">
                         <h5 class="text-white">Call Us</h5>
-                        <p class="m-0">+012 345 6789</p>
+                            {% for contact_info in contact_info %}
+                                <p class="m-0">{{contact_info.phone_number}}</p>
+                            {% endfor %}
                     </div>
                 </div>
             </div>
@@ -158,9 +164,9 @@
                 <div class="d-flex flex-column justify-content-start">
                     <a class="text-white mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
                     <a class="text-white mb-2" href="{% url 'about' %}"><i class="fa fa-angle-right mr-2"></i>About</a>
-                    <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Services</a>
-                    <a class="text-white mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Attorneys</a>
-                    <a class="text-white" href=""><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                    <a class="text-white mb-2" href="{% url 'practice' %}"><i class="fa fa-angle-right mr-2"></i>Practice</a>
+                    <a class="text-white mb-2" href="{% url 'attorneys' %}"><i class="fa fa-angle-right mr-2"></i>Attorneys</a>
+                    <a class="text-white" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact</a>
                 </div>
             </div>
             {% comment %}
@@ -178,7 +184,7 @@
         </div>
         <div class="row p-4 mt-5 mx-0" style="background: rgba(256, 256, 256, .05);">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a class="font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved.</p>
+                <p class="m-0 text-white">&copy; <a class="font-weight-bold" href="#">Pactum Law Firm</a>. All Rights Reserved.</p>
             </div>
             <div class="col-md-6 text-center text-md-right">
                 <p class="m-0 text-white">Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a></p>

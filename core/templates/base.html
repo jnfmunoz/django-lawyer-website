@@ -26,9 +26,16 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+
+    <!-- Sweetify2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Sweetify2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
 <body>
+    {% load custom_filters %}
+
     <!-- Header Start -->
     <div class="container-fluid">
         <div class="row">
@@ -49,7 +56,7 @@
                             </div>
                             <div class="h-100 d-inline-flex align-items-center py-2 px-2">
                                 <i class="fa fa-phone-alt text-primary mr-2"></i>
-                                <small>{{contact_info.phone_number}}</small>
+                                <small>{{contact_info.phone_number|format_phone}}</small>
                             </div>
                         {% endfor %}
                     </div>                    
@@ -107,6 +114,9 @@
 
     <!-- Content -->
     {% block content %}{% endblock content %}
+
+    {% load sweetify %}
+    {% sweetify %}
     
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-white pt-5 px-sm-3 px-md-5" style="margin-top: 90px;">
@@ -139,7 +149,7 @@
                     <div class="ml-3">
                         <h5 class="text-white">Call Us</h5>
                             {% for contact_info in contact_info %}
-                                <p class="m-0">{{contact_info.phone_number}}</p>
+                                <p class="m-0">{{contact_info.phone_number|format_phone}}</p>
                             {% endfor %}
                     </div>
                 </div>

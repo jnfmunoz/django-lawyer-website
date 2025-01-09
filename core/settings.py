@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sweetify',
     'about',
     'attorneys',
     'communications',
@@ -45,8 +46,7 @@ INSTALLED_APPS = [
     'core',
     'features',
     'fontawesome_5',
-    'practice',
-    # 'social',
+    'practice',    
 ]
 
 MIDDLEWARE = [
@@ -152,3 +152,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 import django.utils.translation
 django.utils.translation.ugettext = django.utils.translation.gettext
+
+# SMTP Gmail configuration
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "pactumlawfirm@gmail.com"
+EMAIL_HOST_PASSWORD = "bxptebzuigvrffvs"  # Contraseña o contraseña de aplicación
+
+# possible options: 'sweetalert', 'sweetalert2' - default is 'sweetalert2'
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'

@@ -92,11 +92,11 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
-                            <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                            <a href="{% url 'practice' %}" class="nav-item nav-link">Practice</a>   
-                            <a href="{% url 'attorneys' %}" class="nav-item nav-link">Attorneys</a>
-                            <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                            <a href="{% url 'index' %}" class="nav-item nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
+                            <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
+                            <a href="{% url 'practice' %}" class="nav-item nav-link {% if request.path == '/practice/' %}active{% endif %}">Practice</a>   
+                            <a href="{% url 'attorneys' %}" class="nav-item nav-link {% if request.path == '/attorneys/' %}active{% endif %}">Attorneys</a>
+                            <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
                         </div>                        
                     </div>
                 </nav>

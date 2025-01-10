@@ -33,5 +33,7 @@ def contact_view(request):
             return redirect("contact")
         
         except Exception as e:
-            return JsonResponse({"success": False, "message": str(e)})
+            sweetify.error(request, f"Hubo un error: {str(e)}", icon="error")
+            return redirect("contact")
+
     return render(request, "contact.html")

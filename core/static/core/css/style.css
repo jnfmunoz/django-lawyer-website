@@ -9842,24 +9842,72 @@ h4, h5, h6 {
   font-size: 22px;
 }
 
-/* .team-img .team-social {
+.team-img {
+  position: relative;
+  overflow: hidden; 
+}
+
+.team-img .team-social {
   position: absolute;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el contenedor en ambos ejes */
+  width: auto;
   height: 100%;
-  top: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(55, 55, 63, 0.7);
-  transition: .5;
+  transition: opacity 0.5s ease;
   z-index: 1;
   opacity: 0;
-} */
+}
 
-/* .team-item:hover .team-social {
+.team-item:hover .team-social {
   opacity: 1;
-} */
+}
+
+.team-social a {
+  display: inline-flex;
+  align-items: center; /* Alineación vertical de los iconos dentro de los enlaces */
+  justify-content: center; /* Alineación horizontal de los iconos dentro de los enlaces */
+  margin: 0 8px;
+  font-size: 1.5rem; /* Tamaño de los iconos */
+  z-index: 2; /* Asegura que los enlaces se muestren encima de otros elementos */
+}
+
+.owl-carousel .team-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Mantiene el item como contenedor con referencia */
+}
+ 
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cubre toda la imagen */
+  height: 100%; /* Cubre toda la imagen */
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos hijos */
+  justify-content: center; /* Centra horizontalmente los elementos hijos */
+  background: rgba(55, 55, 63, 0.7);
+  transition: opacity 0.5s ease; /* Animación suave para el hover */
+  z-index: 1;
+  opacity: 0; /* Oculta por defecto */
+}
+
+.team-img:hover .team-overlay {
+  opacity: 1; /* Muestra el overlay al hacer hover */
+}
+
+.team-overlay a {
+  display: inline-flex; /* Asegura el centrado de los iconos dentro de los enlaces */
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px; /* Espaciado entre los botones */
+}
 
 .testimonial-text::after {
   position: absolute;
@@ -9911,8 +9959,6 @@ h4, h5, h6 {
   list-style-type: none;
 }
 
-
-
 .team-img {
   position: relative;
   width: 100%; /* Asegura que se ajuste al contenedor */
@@ -9951,3 +9997,12 @@ h4, h5, h6 {
   flex: 1 1 auto; /* Ajuste automático del tamaño */
   max-width: 100%; /* Previene desbordamientos */
 }
+
+.team-item h5, p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+

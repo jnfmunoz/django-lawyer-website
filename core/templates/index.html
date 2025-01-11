@@ -150,8 +150,8 @@
                             <h5 class="mb-2 px-4">{{attorney.first_name}} {{attorney.last_name}}</h5>
                             <p class="mb-3 px-4">{{attorney.practice_area}}</p>
                             <div class="team-img position-relative">
-                                <img class="img-fluid" src="{{attorney.profile_photo.url}}" alt="">
-                                <div class="team-social">
+                                <img class="img-fluid" src="{{attorney.profile_photo.url}}" alt="">                                                        
+                                <div class="team-overlay">    
                                     {% if attorney.twitter %}
                                         <a class="btn btn-outline-light btn-square mx-1" href="{{attorney.twitter}}"><i class="fab fa-twitter"></i></a>
                                     {% endif %}
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                         </div>
-                    {% endfor %}
+                    {% endfor %}                    
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -9842,71 +9842,23 @@ h4, h5, h6 {
   font-size: 22px;
 }
 
-.team-img {
-  position: relative;
-  overflow: hidden; 
-}
-
 .team-img .team-social {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centra el contenedor en ambos ejes */
-  width: auto;
+  width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(55, 55, 63, 0.7);
-  transition: opacity 0.5s ease;
+  transition: .5s;
   z-index: 1;
   opacity: 0;
 }
 
 .team-item:hover .team-social {
   opacity: 1;
-}
-
-.team-social a {
-  display: inline-flex;
-  align-items: center; /* Alineación vertical de los iconos dentro de los enlaces */
-  justify-content: center; /* Alineación horizontal de los iconos dentro de los enlaces */
-  margin: 0 8px;
-  font-size: 1.5rem; /* Tamaño de los iconos */
-  z-index: 2; /* Asegura que los enlaces se muestren encima de otros elementos */
-}
-
-.owl-carousel .team-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Mantiene el item como contenedor con referencia */
-}
- 
-.team-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Cubre toda la imagen */
-  height: 100%; /* Cubre toda la imagen */
-  display: flex;
-  align-items: center; /* Centra verticalmente los elementos hijos */
-  justify-content: center; /* Centra horizontalmente los elementos hijos */
-  background: rgba(55, 55, 63, 0.7);
-  transition: opacity 0.5s ease; /* Animación suave para el hover */
-  z-index: 1;
-  opacity: 0; /* Oculta por defecto */
-}
-
-.team-img:hover .team-overlay {
-  opacity: 1; /* Muestra el overlay al hacer hover */
-}
-
-.team-overlay a {
-  display: inline-flex; /* Asegura el centrado de los iconos dentro de los enlaces */
-  align-items: center;
-  justify-content: center;
-  margin: 0 8px; /* Espaciado entre los botones */
 }
 
 .testimonial-text::after {
@@ -9959,50 +9911,76 @@ h4, h5, h6 {
   list-style-type: none;
 }
 
-.team-img {
-  position: relative;
-  width: 100%; /* Asegura que se ajuste al contenedor */
-  height: auto; /* Permite que la altura sea proporcional */
-  overflow: hidden; /* Evita contenido que sobresalga */
+.team-section .team-item {
+  /* Estilos específicos para los elementos de los abogados */
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
 }
 
-.team-img img {
-  width: 100%; /* Imágenes fluidas */
-  height: auto; /* Mantener proporción */
-  object-fit: cover; /* Cubre todo el contenedor */
-  transform: scale(1.02); /* Ajusta ligeramente para evitar bordes visibles */
-  transition: transform 0.3s ease-in-out; /* Transición suave */
-} 
+.team-section .team-item:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
 
-@media (max-width: 768px) {
-  .team-img .team-social {
-      justify-content: flex-start; /* Centrado desde el inicio */
-      padding: 10px; /* Espacio alrededor del contenido */
-  }
+.team-section .team-overlay {
+  /* Estilo exclusivo para el overlay */
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-section .team-img:hover .team-overlay {
+  opacity: 1;
+}
+
+.team-section .btn-square {
+  /* Botones cuadrados específicos para redes sociales */
+  width: 40px;
+  height: 40px;
 }
 
 .team-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; /* Llena completamente la columna */
+  position: relative; /* Para que los elementos hijos con posición absoluta se alineen a esta tarjeta */
+  overflow: hidden;   /* Para evitar que los elementos salgan de los bordes */
+  border-radius: 10px; /* Opcional: Ajusta los bordes de la tarjeta */
 }
 
-.team-item h5,
-.team-item p {
-  margin: 0 auto; /* Centrado */
+.team-img img {
+  width: 100%;        /* Asegura que la imagen ocupe todo el contenedor */
+  height: auto;       /* Mantiene la proporción original de la imagen */
+  display: block;     /* Elimina el espacio blanco generado por elementos inline */
 }
 
-.team-carousel .team-item {
-  flex: 1 1 auto; /* Ajuste automático del tamaño */
-  max-width: 100%; /* Previene desbordamientos */
+.team-overlay {
+  position: absolute; /* Posiciona el overlay dentro del .team-item */
+  top: 0;
+  left: 0;
+  width: 100%;        /* Cubre toda la imagen */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  display: flex;      /* Centra los botones */
+  justify-content: center;
+  align-items: center;
+  opacity: 0;         /* Comienza invisible */
+  transition: opacity 0.3s ease; /* Animación suave */
 }
 
-.team-item h5, p{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.team-item:hover .team-overlay {
+  opacity: 1;         /* Aparece al pasar el mouse */
 }
 
+.btn-square {
+  width: 40px;        /* Ajusta el tamaño del botón */
+  height: 40px;
+  border-radius: 5px; /* Hazlo cuadrado con esquinas redondeadas */
+  line-height: 40px;  /* Centra el ícono verticalmente */
+  text-align: center; /* Centra el ícono horizontalmente */
+  color: #fff;        /* Color del texto/ícono */
+  
+  margin: 0 5px;      /* Espaciado entre botones */
+  transition: background-color 0.3s ease; /* Animación suave */
+}
 
-
+.btn-square:hover {
+  background-color: #fff; /* Cambia de color al hacer hover */
+}

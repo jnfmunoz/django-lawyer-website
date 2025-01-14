@@ -26,6 +26,7 @@ Este proyecto es un landing page desarrollado con **Django** para mostrar servic
 - [Uso](#uso)
 - [Capturas de Pantalla](#capturas-de-pantalla)
 - [Tecnologías](#tecnologías)
+- [Recursos y Créditos](#recursos-y-creditos)
 
 ## Descripción
 Landing page desarrollado con Django que sirve como sitio web principal para una firma de abogados. Su objetivo principal es proporcionar un medio eficiente y profesional para que los clientes potenciales pueda:
@@ -99,3 +100,17 @@ Esta arquitectura asegura un sitio web profesional, flexible y fácil de mantene
    Si deseas contactar a la firma de abogados, utiliza el formulario de contacto proporcionado. Rellena los campos con tu consulta y recibirás una respuesta vía correo electrónico a través de Gmail SMTP.
 
 ## Capturas de pantalla
+
+
+## Tecnologías
+- **Django 4.2.16** - Framework web de Python.
+- **Bootstrap 4.4.1** - Framework CSS para diseño responsivo.
+- **Gmail SMTP** - Servicio de correo electrónico utilizado para gestionar el envío de mensajes desde el formulario de contacto.
+- **Sweetify 2.3.1** - Librería para mostrar alertas personalizadas.
+- **Python 3.11.4** - Lenguaje de programación utilizado para desarrollar el backend.
+- **JavaScript** - Lenguaje para interactividad en el frontend.
+- **HTML5** - Lenguaje de marcado utilizado para estructurar la página web.
+- **SQLite3** - Base de datos utilizada (por defecto en Django).
+
+## Recursos y Créditos
+El diseño frontend utilizado en este proyecto fue clonado desde el repositorio: `https://htmlcodex.com/lawyer-website-template-free/`. Este repositorio proporciona la base del diseño responsivo y estructura visual de la página.

@@ -16,5 +16,5 @@ class PracticeArea(models.Model):
         ordering = ["title"]
 
     def __str__(self):
-        return f"Título: {self.title} | Descripción: {self.description} | Ícono: {self.icon}"
+        return f"{self.title}"
 

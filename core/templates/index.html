@@ -11,7 +11,7 @@
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Pactum Law Firm</h4>
-                        <h3 class="display-2 text-capitalize text-white mb-4">Our fighting Is for your justice</h3>                            
+                        <h3 class="display-2 text-capitalize text-white mb-4">Nuestra lucha es por tu justicia</h3>                            
                     </div>
                 </div>
             </div>
@@ -19,8 +19,8 @@
                 <img class="position-absolute w-100 h-100" src="{% static 'core/img/carousel-2.jpg' %}" style="object-fit: cover;">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Results You Deserve</h4>
-                        <h3 class="display-2 text-capitalize text-white mb-4">We prepared to oppose for you</h3>                        
+                        <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Resultados que te mereces</h4>
+                        <h3 class="display-2 text-capitalize text-white mb-4">Nos preparamos para oponernos por ti</h3>                        
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <h6 class="text-uppercase">{{about.subtitle}}</h6>
                     <h1 class="mb-4">{{about.title}}</h1>
                     <p>{{about.description}}</p>
-                    <a href="{% url 'about' %}" class="btn btn-primary mt-2">Learn More</a>
+                    <a href="{% url 'about' %}" class="btn btn-primary mt-2">Más información</a>
                 </div>
             </div>
         {% endfor %}
@@ -65,10 +65,10 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-3">
-                <h6 class="text-uppercase">Our Practice</h6>
-                <h1 class="mb-4">Our Practice Areas</h1>
+                <h6 class="text-uppercase">Nuestra práctica</h6>
+                <h1 class="mb-4">Nuestras áreas de práctica</h1>
                 <p>Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum</p>
-                <a href="{% url 'practice' %}" class="btn btn-primary mt-2">More Services</a>
+                <a href="{% url 'practice' %}" class="btn btn-primary mt-2">Más servicios</a>
             </div>
             <div class="col-lg-9 pt-5 pt-lg-0">
                 <div class="bg-primary rounded" style="height: 200px;"></div>
@@ -100,8 +100,8 @@
             </div>
             <div class="col-lg-6 pt-5 pb-lg-5">
                 <div class="feature-text bg-white rounded p-lg-5">
-                    <h6 class="text-uppercase">Our Features</h6>
-                    <h1 class="mb-4">Why Choose Us</h1>
+                    <h6 class="text-uppercase">Nuestras características</h6>
+                    <h1 class="mb-4">¿Por qué elegirnos?</h1>
                     {% for counter, feature in features %}
                         <div class="d-flex mb-4">
                             <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">
@@ -125,58 +125,20 @@
         <div class="bg-action rounded" style="height: 500px;">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-lg-7 text-center">
-                    <h1 class="text-white mb-4">Let's get started. Call us now for a Free Consultation</h1>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="#">Call Us Now</a>
+                    <h1 class="text-white mb-4">Empecemos. Llámenos ahora para una consulta gratuita</h1>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'contact' %}">Llámanos ahora</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Action End -->
-{% comment %} <!-- Team Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="text-center pb-2">
-            <h6 class="text-uppercase">Our Attorneys</h6>
-            <h1 class="mb-4">Meet Our Attorneys</h1>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="bg-primary rounded" style="height: 200px;"></div>
-                <div class="owl-carousel team-carousel position-relative" style="margin-top: -97px; padding: 0 30px;">
-                    {% for attorney in attorneys %}
-                        <div class="team-item text-center bg-white rounded overflow-hidden pt-4">
-                            <h5 class="mb-2 px-4">{{attorney.first_name}} {{attorney.last_name}}</h5>
-                            <p class="mb-3 px-4">{{attorney.practice_area}}</p>
-                            <div class="team-img position-relative">
-                                <img class="img-fluid" src="{{attorney.profile_photo.url}}" alt="">                                                        
-                                <div class="team-overlay">    
-                                    {% if attorney.twitter %}
-                                        <a class="btn btn-outline-light btn-square mx-1" href="{{attorney.twitter}}"><i class="fab fa-twitter"></i></a>
-                                    {% endif %}
-                                    {% if attorney.facebook %}
-                                        <a class="btn btn-outline-light btn-square mx-1" href="{{attorney.facebook}}"><i class="fab fa-facebook-f"></i></a>
-                                    {% endif %}                                    
-                                    {% if attorney.linkedin %}
-                                        <a class="btn btn-outline-light btn-square mx-1" href="{{attorney.linkedin}}"><i class="fab fa-linkedin-in"></i></a>
-                                    {% endif %}                                    
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Team End --> {% endcomment %}
-
 <!-- Team Start -->
 <div class="container-fluid py-5 team-section">
     <div class="container py-5">
         <div class="text-center pb-2">
-            <h6 class="text-uppercase">Our Attorneys</h6>
-            <h1 class="mb-4">Meet Our Attorneys</h1>
+            <h6 class="text-uppercase">Nuestros Abogados</h6>
+            <h1 class="mb-4">Conozca a Nuestros Abogados</h1>
         </div>
         <div class="row">
             <div class="col-12">
@@ -208,7 +170,4 @@
     </div>
 </div>
 <!-- Team End -->
-
-{% endblock content %}
-
-    
+{% endblock content %}    

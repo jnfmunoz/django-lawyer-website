@@ -5,11 +5,11 @@
 <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
     <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 text-white text-uppercase">Contact</h3>
+            <h3 class="display-3 text-white text-uppercase">Contacto</h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Inicio</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">Contact</p>
+                <p class="m-0 text-uppercase">Contacto</p>
             </div>
         </div>
     </div>
@@ -17,38 +17,39 @@
 <!-- Page Header End -->
 <!-- Contact Start -->
 <div class="container-fluid py-5">
-    <div class="container py-5 d-flex justify-content-center align-items-center" style="min-height: 400px;">
-        <div class="col-lg-6">
-            <div class="text-center pb-2">
-                <h6 class="text-uppercase">Contact Us</h6>
-                <h1 class="mb-4">Contact For Any Query</h1>
-            </div>
-            <div class="contact-form bg-light p-4 rounded">
-                <div id="success"></div>
-                <form name="sentMessage" id="contactForm" method="POST" action="{% url 'contact' %}">
-                    {% csrf_token %}
-                    <div class="form-row">
-                        <div class="col-sm-6 control-group">
-                            <input type="text" class="form-control p-4" id="name" name="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-sm-6 control-group">
-                            <input type="email" class="form-control p-4" id="email" name="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                            <p class="help-block text-danger"></p>
-                        </div>
+    <div class="container py-5">
+        <div class="bg-appointment rounded">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-lg-6 py-5">
+                    <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
+                        <h6 class="text-center text-white mb-4">Contáctanos</h6>
+                        <h1 class="text-center text-white mb-4">Contacto Para Cualquier Consulta</h1>                        
+                        <form name="sentMessage" id="contactForm" method="POST" action="{% url 'contact' %}">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    <input type="text" class="form-control p-4" id="name" name="name" placeholder="Nombre" required="required" data-validation-required-message="Por favor ingresa tu nombre" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="email" class="form-control p-4" id="email" name="email" placeholder="Email" required="required" data-validation-required-message="Por favor ingresa tu email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="subject" name="subject" placeholder="Asunto" required="required" data-validation-required-message="Por favor ingresa un asunto" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control p-4" rows="6" id="message" name="message" placeholder="Mensaje" required="required" data-validation-required-message="Por favor ingresa tu message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block" type="submit" id="sendMessageButton">Enviar Mensaje</button>
+                            </div>
+                        </form>            
                     </div>
-                    <div class="control-group">
-                        <input type="text" class="form-control p-4" id="subject" name="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <textarea class="form-control p-4" rows="6" id="message" name="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary btn-block" type="submit" id="sendMessageButton">Send Message</button>
-                    </div>
-                </form>                
+                </div>
             </div>
         </div>
     </div>

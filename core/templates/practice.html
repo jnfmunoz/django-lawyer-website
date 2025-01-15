@@ -5,11 +5,11 @@
 <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
     <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 text-white text-uppercase">Practice</h3>
+            <h3 class="display-3 text-white text-uppercase">Áreas de práctica</h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Inicio</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">Practice</p>
+                <p class="m-0 text-uppercase">Áreas de práctica</p>
             </div>
         </div>
     </div>
@@ -20,14 +20,15 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-3">
-                <h6 class="text-uppercase">Our Practice</h6>
-                <h1 class="mb-4">Our Practice Areas</h1>
+                <h6 class="text-uppercase">Nuestra práctica</h6>
+                <h1 class="mb-4">Nuestras áreas de práctica</h1>
                 <p>Invidunt lorem justo clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum</p>
-                <a href="{% url 'practice' %}" class="btn btn-primary mt-2">More Services</a>
+                <a href="{% url 'practice' %}" class="btn btn-primary mt-2">Más servicios</a>
             </div>
             <div class="col-lg-9 pt-5 pt-lg-0">
                 <div class="bg-primary rounded" style="height: 200px;"></div>
-                <div class="owl-carousel service-carousel position-relative" style="margin-top: -100px; padding: 0 30px;">                    
+                <div class="owl-carousel service-carousel position-relative" style="margin-top: -100px; padding: 0 30px;">
+                    
                     {% for practice in practice_areas %}
                         <div class="d-flex flex-column align-items-center text-center bg-white rounded pt-4">
                             <div class="icon-box bg-secondary text-primary mt-2 mb-4">                                
@@ -49,8 +50,8 @@
         <div class="bg-action rounded" style="height: 500px;">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-lg-7 text-center">
-                    <h1 class="text-white mb-4">Let's get started. Call us now for a Free Consultation</h1>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'contact' %}">Call Us Now</a>
+                    <h1 class="text-white mb-4">Empecemos. Llámenos ahora para una consulta gratuita</h1>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="{% url 'contact' %}">Llámanos ahora</a>
                 </div>
             </div>
         </div>

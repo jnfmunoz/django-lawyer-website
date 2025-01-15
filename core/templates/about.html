@@ -5,11 +5,11 @@
 <div class="container-fluid bg-page-header" style="margin-bottom: 90px;">
     <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-3 text-white text-uppercase">About</h3>
+            <h3 class="display-3 text-white text-uppercase">Acerca de</h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-uppercase"><a class="text-white" href="">Inicio</a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">About</p>
+                <p class="m-0 text-uppercase">Acerca de</p>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
                     <h6 class="text-uppercase">{{about.subtitle}}</h6>
                     <h1 class="mb-4">{{about.title}}</h1>
                     <p>{{about.description}}</p>
-                    <a href="{% url 'about' %}" class="btn btn-primary mt-2">Learn More</a>
+                    <a href="{% url 'about' %}" class="btn btn-primary mt-2">Más información</a>
                 </div>
             </div>
         {% endfor %}
@@ -48,8 +48,8 @@
             </div>
             <div class="col-lg-6 pt-5 pb-lg-5">
                 <div class="feature-text bg-white rounded p-lg-5">
-                    <h6 class="text-uppercase">Our Features</h6>
-                    <h1 class="mb-4">Why Choose Us</h1>
+                    <h6 class="text-uppercase">Nuestras características</h6>
+                    <h1 class="mb-4">¿Por qué elegirnos?</h1>
                     {% for counter, feature in features %}
                         <div class="d-flex mb-4">
                             <div class="btn-primary btn-lg-square px-3" style="border-radius: 50px;">

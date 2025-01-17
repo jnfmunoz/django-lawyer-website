@@ -4,4 +4,5 @@ django-fontawesome-5==1.0.18
 pillow==11.0.0
 PyYAML==6.0.2
 sqlparse==0.5.2
+sweetify==2.3.1
 tzdata==2024.2

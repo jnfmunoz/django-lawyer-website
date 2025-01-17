@@ -17,7 +17,7 @@
 <div align=center>
   <h1>Landing Page Pactum Law Firm: Servicios Jurídicos</h1>
 </div>
-Este proyecto es un landing page desarrollado con **Django** para mostrar servicios jurídicos, con un enfoque en la presentación de abogados y sus perfiles sociales. Forma       parte de mi portafolio de proyectos para demostrar habilidades en el desarrollo web y la integración de backends dinámicos.
+Este proyecto es un landing page desarrollado con Django para mostrar servicios jurídicos, con un enfoque en la presentación de abogados y sus perfiles sociales. Forma       parte de mi portafolio de proyectos para demostrar habilidades en el desarrollo web y la integración de backends dinámicos.
 
 ## Tabla de Contenidos
 - [Descripción](#descripción)

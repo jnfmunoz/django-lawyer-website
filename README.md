@@ -17,7 +17,7 @@
 <div align=center>
   <h1>Landing Page Pactum Law Firm: Servicios Jurídicos</h1>
 </div>
-Este proyecto es un landing page desarrollado con **Django** para mostrar servicios jurídicos, con un enfoque en la presentación de abogados y sus perfiles sociales. Forma       parte de mi portafolio de proyectos para demostrar habilidades en el desarrollo web y la integración de backends dinámicos.
+Este proyecto es un landing page desarrollado con Django para mostrar servicios jurídicos, con un enfoque en la presentación de abogados y sus perfiles sociales. Forma       parte de mi portafolio de proyectos para demostrar habilidades en el desarrollo web y la integración de backends dinámicos.
 
 ## Tabla de Contenidos
 - [Descripción](#descripción)
@@ -26,7 +26,7 @@ Este proyecto es un landing page desarrollado con **Django** para mostrar servic
 - [Uso](#uso)
 - [Capturas de Pantalla](#capturas-de-pantalla)
 - [Tecnologías](#tecnologías)
-- [Recursos y Créditos](#recursos-y-creditos)
+- [Recursos y Créditos](#recursos-y-créditos)
 
 ## Descripción
 Landing page desarrollado con Django que sirve como sitio web principal para una firma de abogados. Su objetivo principal es proporcionar un medio eficiente y profesional para que los clientes potenciales pueda:
@@ -100,7 +100,30 @@ Esta arquitectura asegura un sitio web profesional, flexible y fácil de mantene
    Si deseas contactar a la firma de abogados, utiliza el formulario de contacto proporcionado. Rellena los campos con tu consulta y recibirás una respuesta vía correo electrónico a través de Gmail SMTP.
 
 ## Capturas de pantalla
+#### Página de inicio
+<p align="center">
+  <img src="screenshots\index.png">
+</p>
 
+### Acerca de
+<p align="center">
+  <img src="screenshots\about.png">
+</p>
+
+### Áreas de práctica
+<p align="center">
+  <img src="screenshots\practice.png">
+</p>
+
+### Abogados
+<p align="center">
+  <img src="screenshots\attorneys.png">
+</p>
+
+### Contacto
+<p align="center">
+  <img src="screenshots\contact.png">
+</p>
 
 ## Tecnologías
 - **Django 4.2.16** - Framework web de Python.
